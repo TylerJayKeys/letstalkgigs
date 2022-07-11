@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "letstalkgigs"
+  },
+  "targets": {
+    "letstalkgigs": {
+      "hosting": {
+        "letstalkgigs": [
+          "letstalkgigs"
+        ]
+      }
+    }
+  }
+}

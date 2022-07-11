@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "letstalkgigs:build:production",
+            "firebaseProject": "letstalkgigs",
+            "firebaseHostingSite": "letstalkgigs"
+          }
         }
       }
     }
