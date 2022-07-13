@@ -11,6 +11,7 @@ import { provideFirestore, getFirestore, connectFirestoreEmulator } from '@angul
 import { provideFunctions, getFunctions, connectFunctionsEmulator } from '@angular/fire/functions';
 import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 import { provideStorage, getStorage, connectStorageEmulator } from '@angular/fire/storage';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -49,6 +50,12 @@ import { provideStorage, getStorage, connectStorageEmulator } from '@angular/fir
         connectStorageEmulator(storage, 'localhost', 9199);
       }
       return storage;
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     })
   ],
   providers: [],
